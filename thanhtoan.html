@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương Thức Thanh Toán</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .payment-method {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .payment-method label {
+            font-size: 1.2rem;
+            color: #555;
+            margin-left: 10px;
+        }
+        .payment-method input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chọn Phương Thức Thanh Toán</h2>
+
+    <form action="thanhtoan.php" method="POST">
+        <!-- Lựa chọn phương thức thanh toán -->
+        <div class="payment-method">
+            <input type="radio" id="cash" name="payment_method" value="cash" required>
+            <label for="cash">Thanh toán tiền mặt khi nhận hàng</label>
+        </div>
+
+        <div class="payment-method">
+            <input type="radio" id="bank" name="payment_method" value="bank">
+            <label for="bank">Chuyển khoản ngân hàng</label>
+        </div>
+
+        <div class="payment-method">
+            <input type="radio" id="e_wallet" name="payment_method" value="e_wallet">
+            <label for="e_wallet">Thanh toán qua ví điện tử (Momo, ZaloPay, VNPAY, ...)</label>
+        </div>
+
+        <!-- Nút xác nhận -->
+        <button type="submit" class="btn">Xác Nhận Thanh Toán</button>
+    </form>
+</body>
+</html>
